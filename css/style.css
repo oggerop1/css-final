@@ -1,13 +1,13 @@
+body {
+   background: #FFF;
+  }
+
 .flex-container{
 	width			:90%;
 	max-width		:960px;
 	min-width		:320px;
-	margin			:	20px auto;		
-	display			:flex;  	
-	flex-flow		:row wrap; 	
-	justify-content	:center ; 
-	align-items		:center ; 	
-	align-content	:stretch; 
+	margin			:20px auto;		
+	
 }
 
 .item{
@@ -76,18 +76,28 @@ header ul li:hover{
 	justify-content		:center;
 	align-content		:center;
 	align-items			:center;
+	background			:#d5c75f;
+	border				:1px;
 }
 	
 #imagenCentral {
 	display		:flex;
-  	min-height	:100vh;
- 	margin		:0;
+   	margin		:0;
+	background:#82c3a6;
 }
 
-#imagenCentral > img{
-	margin	:auto;
-	width	:950px;
-	height	:auto;
+#marcoImagenCentral{
+	width: 80%;
+	height:90%;
+	margin: 0 auto;
+	padding-top:20px;
+	padding-bottom:20px;
+
+}
+#imagenCentral > #marcoImagenCentral > img{
+	margin	: auto;
+	width	: 100%;
+    height	: auto;
 
 }
 
@@ -96,39 +106,31 @@ header ul li:hover{
 
 	-webkit-flex	:1 1 50%;
     flex			:1 1 50%;
-   	-webkit-order	:2;
-    order			:2;
-	align-self		:auto;
-	min-width		:0;
-	min-height		:auto;
+   	-webkit-order	:1;
+    order			:1;
 }
 
 #contenido > #imagenIzquierda > img{
-	width	:470px;
-	height	:300px;
+	width : 100%;
+    height: auto;
 }
 
 #contenido > #imagenDerecha {
 	-webkit-flex	:1 1 50%;
     flex			:1 1 50%;
-    -webkit-order	:3;
-    order			:3;
-	align-self		:auto;
-	min-width		:0;
-	min-height		:auto;
+    -webkit-order	:2;
+    order			:2;
+	
 }
 
 #contenido > #imagenDerecha > img{
-	width	:470px;
-	height	:300px;
+	width : 100%;
+    height: auto;
 }
 
 
 footer{
-   	margin						:0px;
-   	padding						:0px;
-  	
-	display						:-webkit-flex;
+   	display						:-webkit-flex;
    	display						:flex;
    	-webkit-flex-flow			:row;
             flex-flow			:row;
@@ -143,9 +145,10 @@ footer{
 	align-items					:center;
 	
 	flex						:1 100%;
-	}
+}
+
 footer > #contactos {
-	float			:left;
+
 	width			:25%;
     -webkit-flex	:1 1 auto;
            flex		:1 1 auto;
@@ -158,7 +161,7 @@ footer > #contactos {
 }
 
 footer > #terminos {
-		float			:left;
+
 	width			:25%;
     -webkit-flex	:1 1 auto;
            flex		:1 1 auto;
@@ -171,7 +174,7 @@ footer > #terminos {
 }
 
 footer > #redes {
-		float		:left;
+
 	width			:25%;
     -webkit-flex	:1 1 auto;
            flex		:1 1 auto;
@@ -184,7 +187,7 @@ footer > #redes {
 }
 
 footer > #derechos {
-	float			:left;
+
 	width			:25%;
     -webkit-flex	:1 1 auto;
            flex		:1 1 auto;
@@ -196,31 +199,21 @@ footer > #derechos {
 	margin			:5px;
 }
 
-@media screen and (max-width: 600px) {
-	
-	header nav{
-		line-height:31px;
-	}
-	header ul{	
-	 	flex-flow		: column wrap;	
-	 	align-items		: center; 
-	 	justify-content	: center;  	
-	}
-	header ul li{
-		margin-bottom:2px;
-	}
-	
-	
-	header{
-		order:0;
-	}
-	
-	#cuerpo{
-		flex: 1 100%;
-		order:1;		
-	}
-	
-	footer{
-		order:2;
-	}
-}
+ @media all and (max-width: 640px) {
+  
+   .flex-container, .item{
+    -webkit-flex-flow: column;
+            flex-flow: column;
+   }
+
+   #main > article, #main > nav, #main > aside {
+    /* Return them to document order */
+    -webkit-order: 0;
+            order: 0;
+   }
+  
+   #main > nav, #main > aside, header, footer {
+    min-height: 50px;
+    max-height: 50px;
+   }
+  }
