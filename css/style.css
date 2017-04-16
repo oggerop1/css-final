@@ -1,0 +1,226 @@
+.flex-container{
+	width			:90%;
+	max-width		:960px;
+	min-width		:320px;
+	margin			:	20px auto;		
+	display			:flex;  	
+	flex-flow		:row wrap; 	
+	justify-content	:center ; 
+	align-items		:center ; 	
+	align-content	:stretch; 
+}
+
+.item{
+	color		:	#FFF;
+	text-align	:	center;
+	margin		:	0 auto;
+	font-size	:	25px;
+}
+
+header{
+	height						:100px;
+	background-color			:#5b7989;
+	overflow					:hidden;
+	text-align					:center;
+	border-top-left-radius		:10px;
+	border-top-right-radius		:10px;	
+
+	flex						:1 100%;
+}
+header h1{
+	line-height	:100px;
+	margin		:0;
+	font-size	:25px; 
+	float		:left;
+	width		:40%;
+	padding-left:20px;
+	box-sizing	:border-box;
+	text-shadow	:2px 2px 2px #02010a;
+}
+header nav{
+	float			:left;
+	width			:60%;
+	line-height		:100px;
+	padding-right	:20px;
+	box-sizing		:border-box;
+}
+header ul{
+	list-style-type	:none;	 		
+	margin			:0;
+	padding			:0;	
+	
+	display			:flex;
+	flex-flow		:row wrap;
+	justify-content	:flex-end;  
+}
+header ul li{
+	margin		:0 5px;	
+	font-size	:20px;	
+	cursor		:pointer;
+	color		:#D5C5C5;
+}
+header ul li:hover{
+	color:#fff;
+}
+
+#cuerpo{	
+
+	flex:1 100%;
+}
+
+#contenido{
+  	display				: -webkit-flex;
+   	display				:flex;
+   	-webkit-flex-flow	:row;
+            flex-flow	:row;
+	justify-content		:center;
+	align-content		:center;
+	align-items			:center;
+}
+	
+#imagenCentral {
+	display		:flex;
+  	min-height	:100vh;
+ 	margin		:0;
+}
+
+#imagenCentral > img{
+	margin	:auto;
+	width	:950px;
+	height	:auto;
+
+}
+
+
+#contenido > #imagenIzquierda {
+
+	-webkit-flex	:1 1 50%;
+    flex			:1 1 50%;
+   	-webkit-order	:2;
+    order			:2;
+	align-self		:auto;
+	min-width		:0;
+	min-height		:auto;
+}
+
+#contenido > #imagenIzquierda > img{
+	width	:470px;
+	height	:300px;
+}
+
+#contenido > #imagenDerecha {
+	-webkit-flex	:1 1 50%;
+    flex			:1 1 50%;
+    -webkit-order	:3;
+    order			:3;
+	align-self		:auto;
+	min-width		:0;
+	min-height		:auto;
+}
+
+#contenido > #imagenDerecha > img{
+	width	:470px;
+	height	:300px;
+}
+
+
+footer{
+   	margin						:0px;
+   	padding						:0px;
+  	
+	display						:-webkit-flex;
+   	display						:flex;
+   	-webkit-flex-flow			:row;
+            flex-flow			:row;
+	
+	background-color			:#C6d5c5;
+	
+	border-bottom-left-radius	:10px;
+	border-bottom-right-radius	:10px;
+	
+	justify-content				:center;
+	align-content				:center;
+	align-items					:center;
+	
+	flex						:1 100%;
+	}
+footer > #contactos {
+	float			:left;
+	width			:25%;
+    -webkit-flex	:1 1 auto;
+           flex		:1 1 auto;
+    -webkit-order	:1;
+           order	:1;
+	align-self		:auto;
+	min-width		:0;
+	min-height		:auto;
+	margin			:5px;
+}
+
+footer > #terminos {
+		float			:left;
+	width			:25%;
+    -webkit-flex	:1 1 auto;
+           flex		:1 1 auto;
+    -webkit-order	:2;
+           order	:2;
+	align-self		:auto;
+	min-width		:0;
+	min-height		:auto;
+	margin			:5px;
+}
+
+footer > #redes {
+		float		:left;
+	width			:25%;
+    -webkit-flex	:1 1 auto;
+           flex		:1 1 auto;
+    -webkit-order	:3;
+           order	:3;
+	align-self		:auto;
+	min-width		:0;
+	min-height		:auto;
+	margin			:5px;
+}
+
+footer > #derechos {
+	float			:left;
+	width			:25%;
+    -webkit-flex	:1 1 auto;
+           flex		:1 1 auto;
+    -webkit-order	:4;
+           order	:4;
+	align-self		:auto;
+	min-width		:0;
+	min-height		:auto;
+	margin			:5px;
+}
+
+@media screen and (max-width: 600px) {
+	
+	header nav{
+		line-height:31px;
+	}
+	header ul{	
+	 	flex-flow		: column wrap;	
+	 	align-items		: center; 
+	 	justify-content	: center;  	
+	}
+	header ul li{
+		margin-bottom:2px;
+	}
+	
+	
+	header{
+		order:0;
+	}
+	
+	#cuerpo{
+		flex: 1 100%;
+		order:1;		
+	}
+	
+	footer{
+		order:2;
+	}
+}
